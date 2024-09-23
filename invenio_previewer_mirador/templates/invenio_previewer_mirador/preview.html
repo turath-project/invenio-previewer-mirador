@@ -1,0 +1,14 @@
+{%- extends "invenio_previewer/base.html" %}
+
+{%- block preview_body %}
+  <div id="mirador-viewer"></div>
+{%- endblock %}
+
+{%- block scripts %}
+  {{ super() }}
+  <script src="{{ url_for('static', filename='gen/mirador-theme.js') }}"></script>
+  <script type="text/javascript">
+    window.previewerFile = {{ file | tojson }};
+    window.previewerRecord = {{ record | tojson }};
+  </script>
+{%- endblock %}

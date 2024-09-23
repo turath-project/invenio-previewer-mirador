@@ -31,3 +31,18 @@ class InvenioPreviewerMirador(object):
         for k in dir(config):
             if k.startswith("PREVIEWER_MIRADOR_"):
                 app.config.setdefault(k, getattr(config, k))
+
+# from flask import render_template
+# from invenio_previewer.previewers.base import Previewer
+#
+# class MiradorPreviewer(Previewer):
+#     def can_preview(self, file):
+#         return file.is_json
+#
+#     def preview(self, file):
+#         return render_template(
+#             'invenio_previewer_mirador/preview.html',
+#             file=file,
+#         )
+#
+# mirador_previewer = MiradorPreviewer()

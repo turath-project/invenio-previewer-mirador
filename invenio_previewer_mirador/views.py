@@ -26,6 +26,6 @@ blueprint = Blueprint(
 def index():
     """Render a basic view."""
     return render_template(
-        "invenio_previewer_mirador/index.html",
+        "invenio_previewer_mirador/preview.html",
         module_name=_("Invenio-Previewer-Mirador"),
     )

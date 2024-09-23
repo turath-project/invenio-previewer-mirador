@@ -8,6 +8,26 @@
 
 """Invenio module that integrates the Mirador viewer as a previewer for digital objects within the InvenioRDM platform.."""
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
-setup()
+setup(
+    name='invenio-previewer-mirador',
+    version='1.0.0',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=[
+        'invenio-previewer>=1.0.0',
+    ],
+    entry_points={
+        'invenio_assets.webpack': [
+            'mirador_theme = invenio_previewer_mirador.webpack:mirador_theme',
+        ],
+        'invenio_base.apps': [
+            'invenio_previewer_mirador = invenio_previewer_mirador:InvenioPreviewerMirador',
+        ],
+        # 'invenio_previewer.previewers': [
+        #     'mirador = invenio_previewer_mirador.previewer:mirador_previewer',
+        # ],
+    },
+)
+
