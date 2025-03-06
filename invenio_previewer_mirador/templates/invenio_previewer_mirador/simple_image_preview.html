@@ -1,0 +1,23 @@
+{% extends "invenio_previewer_mirador/base.html" %}
+
+{% block head %}
+  {{ super() }}
+  <style>
+    .image-preview-container {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+    .preview-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="image-preview-container">
+    <img src="{{ file_url }}" class="preview-image" alt="Preview" data-format="{{ format }}">
+  </div>
+{% endblock %} 
